@@ -1,7 +1,7 @@
 ## Baby sitter Kata
 
 A baby sitter is working and is paid hourly.
-They are required to start a shift not before 5:00pm, place the child to bed, and stay no later than 4pm.
+They are required to start a shift not before 17:00:00, place the child to bed, and stay no later than 04:00:00 next morning.
 
 The baby sitter requirements
 - starts no earlier than 17:00:00
