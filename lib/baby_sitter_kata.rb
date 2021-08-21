@@ -18,8 +18,6 @@ def shift(start_shift, in_bed_time, end_shift)
     time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be less than or equal to your start time."
   elsif end_time <= bed_time
     time_and_pay[:error] = "Please check your end time #{end_time.hour} and bed time #{bed_time.hour} cannot be less than or equal to your bed time."
-  elsif bed_time >= end_time
-    time_and_pay[:error] = "Please check your bed time #{start_time.hour} and end time #{end_time.hour} cannot be less than or equal to your end time."
   elsif start_time.hour <= 16
     time_and_pay[:error] = "Please check your start time #{start_time.hour} cannot be earlier than 17."
   elsif bed_time.hour <= start_time.hour
