@@ -17,4 +17,4 @@ Program using ruby 2.5.5
 In order to use
 - clone project from Github
 - install Ruby
-- run command rake in your terminal
+- run command "rake" in your terminal

@@ -3,9 +3,14 @@ require 'date'
 
 def shift(start_shift, in_bed_time, end_shift)
   time_and_pay = {start: nil, bed_time: nil, end: nil, pay: 0}
-  start_time = Time.parse(start_shift)
-  bed_time = Time.parse(in_bed_time)
-  end_time = Time.parse(end_shift)
+  begin
+    start_time = Time.parse(start_shift)
+    bed_time = Time.parse(in_bed_time)
+    end_time = Time.parse(end_shift)
+  rescue ArgumentError
+     time_and_pay[:error] = "Please check your start time, bedtime, and end time. Invalid date time format was entered."
+     return time_and_pay
+  end
   time_and_pay[:start] = start_time
   time_and_pay[:bed_time] = bed_time
   time_and_pay[:end] = end_time

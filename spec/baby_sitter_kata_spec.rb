@@ -27,6 +27,16 @@ describe "Baby Sitter program" do
     expect(response[:error]).to eq("Please check your start time 17 and end time 5 cannot be earlier than 17 or leave earlier than 4")
   end
 
+  it "Baby sitter not fill in their start time entry correctly return error?" do
+    response = shift("Hello", "2021-08-21 21:00:00", "2021-08-22 05:00:00")
+    expect(response[:error]).to eq("Please check your start time, bedtime, and end time. Invalid date time format was entered.")
+  end
+
+  it "Baby sitter not fill in their bed time entry correctly return error?" do
+    response = shift("2021-08-21 17:00:00", "Hi There", "2021-08-22 05:00:00")
+    expect(response[:error]).to eq("Please check your start time, bedtime, and end time. Invalid date time format was entered.")
+  end
+
   # it "Does the baby sitter have a end time?" do
   #   expect().to eq
   # end
