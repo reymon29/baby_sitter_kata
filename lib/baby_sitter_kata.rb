@@ -8,14 +8,14 @@ def shift(start_shift, in_bed_time, end_shift)
     bed_time = Time.parse(in_bed_time)
     end_time = Time.parse(end_shift)
   rescue ArgumentError
-     time_and_pay[:error] = "Please check your start time, bed time, and end time. Invalid date time format was entered."
+     time_and_pay[:error] = "Please check your start time, bed time, and end time. A invalid date time format was entered."
      return time_and_pay
   end
   time_and_pay[:start] = start_time
   time_and_pay[:bed_time] = bed_time
   time_and_pay[:end] = end_time
-  if end_time < start_time
-    time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be less than your start time."
+  if end_time <= start_time
+    time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be less than or equal to your start time."
   elsif start_time.hour <= 16
     time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be earlier than 17 or leave later than 4"
   elsif bed_time.hour <= start_time.hour

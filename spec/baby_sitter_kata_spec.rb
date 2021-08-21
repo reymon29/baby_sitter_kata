@@ -29,17 +29,17 @@ describe "Baby Sitter program" do
 
   it "Baby sitter not fill in their start time entry correctly return error?" do
     response = shift("Hello", "2021-08-21 21:00:00 -0400", "2021-08-22 05:00:00 -0400")
-    expect(response[:error]).to eq("Please check your start time, bed time, and end time. Invalid date time format was entered.")
+    expect(response[:error]).to eq("Please check your start time, bed time, and end time. A invalid date time format was entered.")
   end
 
   it "Baby sitter not fill in their bed time entry correctly return error?" do
     response = shift("2021-08-21 17:00:00 -0400", "Hi There", "2021-08-22 05:00:00 -0400")
-    expect(response[:error]).to eq("Please check your start time, bed time, and end time. Invalid date time format was entered.")
+    expect(response[:error]).to eq("Please check your start time, bed time, and end time. A invalid date time format was entered.")
   end
 
   it "Baby sitter not fill in their end time entry correctly return error?" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "Ending")
-    expect(response[:error]).to eq("Please check your start time, bed time, and end time. Invalid date time format was entered.")
+    expect(response[:error]).to eq("Please check your start time, bed time, and end time. A invalid date time format was entered.")
   end
 
   it "Baby sitter calculate hourly wage 17:00:00 to 04:00:00?" do
@@ -69,6 +69,6 @@ describe "Baby Sitter program" do
 
   it "Baby sitter check invalid end time error earlier than start time?" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 14:00:00 -0400", "2021-08-21 16:30:15 -0400")
-    expect(response[:error]).to eq("Please check your start time 17 and end time 16 cannot be less than your start time.")
+    expect(response[:error]).to eq("Please check your start time 17 and end time 16 cannot be less than or equal to your start time.")
   end
 end
