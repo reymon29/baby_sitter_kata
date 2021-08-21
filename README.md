@@ -13,7 +13,7 @@ The baby sitter requirements
 
 Adding tests using Rspec and Rake
 
-Program using ruby 2.5.5
+Program using Ruby 2.5.5
 
 In order to use
 - clone project from Github
