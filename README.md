@@ -1,6 +1,6 @@
 ## Baby sitter Kata
 
-A baby sitter is working and is paid hourly.
+A baby sitter is working and paid hourly.
 They are required to start a shift not before 17:00:00, place the child to bed, and stay no later than 04:00:00 next morning.
 
 The baby sitter requirements
@@ -12,9 +12,11 @@ The baby sitter requirements
 - gets paid for full hours (no fractional hours)
 
 Adding tests using Rspec and Rake
+
 Program using ruby 2.5.5
 
 In order to use
 - clone project from Github
 - install Ruby
-- run command "rake" in your terminal
+- run command "rake" in your terminal display the rspec tests
+- total of 14 tests
