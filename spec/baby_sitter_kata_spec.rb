@@ -51,4 +51,9 @@ describe "Baby Sitter program" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 03:30:00 -0400")
     expect(response[:pay]).to eq(128)
   end
+
+    it "Baby sitter calculate hourly wage 17:00:00 to 03:30:15 rounding" do
+    response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 03:30:15 -0400")
+    expect(response[:pay]).to eq(128)
+  end
 end
