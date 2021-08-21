@@ -71,4 +71,9 @@ describe "Baby Sitter program" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 14:00:00 -0400", "2021-08-21 16:30:15 -0400")
     expect(response[:error]).to eq("Please check your start time 17 and end time 16 cannot be less than or equal to your start time.")
   end
+
+  it "Baby sitter check invalid end time error earlier than bed time?" do
+    response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 20:00:00 -0400", "2021-08-21 19:00:00 -0400")
+    expect(response[:error]).to eq("Please check your end time 19 and bed time 20 cannot be less than or equal to your bed time.")
+  end
 end
