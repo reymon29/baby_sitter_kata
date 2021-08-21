@@ -19,12 +19,12 @@ describe "Baby Sitter program" do
 
   it "Baby sitter clocked in at 16 early return error?" do
     response = shift("2021-08-21 16:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 01:00:00 -0400")
-    expect(response[:error]).to eq("Please check your start time 16 and end time 1 cannot be earlier than 17 or leave later than 4")
+    expect(response[:error]).to eq("Please check your start time 16 cannot be earlier than 17.")
   end
 
   it "Baby sitter clocked out at 5 early return error?" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 05:00:00 -0400")
-    expect(response[:error]).to eq("Please check your start time 17 and end time 5 cannot be earlier than 17 or leave later than 4")
+    expect(response[:error]).to eq("Please check your end time 5 cannot stay after 4.")
   end
 
   it "Baby sitter not fill in their start time entry correctly return error?" do

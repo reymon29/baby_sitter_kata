@@ -17,13 +17,13 @@ def shift(start_shift, in_bed_time, end_shift)
   if end_time <= start_time
     time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be less than or equal to your start time."
   elsif start_time.hour <= 16
-    time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be earlier than 17 or leave later than 4"
+    time_and_pay[:error] = "Please check your start time #{start_time.hour} cannot be earlier than 17."
   elsif bed_time.hour <= start_time.hour
     time_and_pay[:error] = "Please check your start time #{start_time.hour} and bed time #{bed_time.hour} cannot be less than your start time."
   elsif Date.parse("#{start_time}") == Date.parse("#{end_time}")
     time_and_pay[:pay] = calculate_hourly_rate(start_time, bed_time, end_time)
   elsif end_time.hour > 4
-    time_and_pay[:error] = "Please check your start time #{start_time.hour} and end time #{end_time.hour} cannot be earlier than 17 or leave later than 4"
+    time_and_pay[:error] = "Please check your end time #{end_time.hour} cannot stay after 4."
   else
    time_and_pay[:pay] = calculate_hourly_rate(start_time, bed_time, end_time)
   end
