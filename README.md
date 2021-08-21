@@ -19,4 +19,4 @@ In order to use
 - clone project from Github
 - install Ruby
 - run command "rake" in your terminal display the rspec tests
-- total of 14 tests
+- return a total of 14 tests
