@@ -33,7 +33,7 @@ def calculate_hourly_rate(start_shift, in_bed_time, end_shift)
     total_amount += (((midnight - bed_time) / 3600) * 8)
     total_amount += (((end_shift - midnight) / 3600) * 16)
   else
-    total_amount += (((midnight - bed_time) / 3600) * 8)
+    total_amount += (((end_shift - bed_time) / 3600) * 8)
   end
   total_amount = total_amount.round(0)
   return total_amount
