@@ -19,7 +19,7 @@ def shift(start_shift, in_bed_time, end_shift)
   else
     time_and_pay[:pay] = calculate_hourly_rate(start_time, bed_time, end_time)
   end
-  p time_and_pay
+  return time_and_pay
 end
 
 def calculate_hourly_rate(start_shift, in_bed_time, end_shift)

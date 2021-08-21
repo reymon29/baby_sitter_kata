@@ -42,25 +42,13 @@ describe "Baby Sitter program" do
     expect(response[:error]).to eq("Please check your start time, bedtime, and end time. Invalid date time format was entered.")
   end
 
-  it "Baby sitter calculate hourly wage?" do
+  it "Baby sitter calculate hourly wage 17:00:00 to 04:00:00?" do
     response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 04:00:00 -0400")
     expect(response[:pay]).to eq(136)
   end
 
-  # it "Does the baby sitter have a end time?" do
-  #   expect().to eq
-  # end
-
-  # it "Did the baby sitter clock out early?" do
-  #   expect().to eq
-  # end
-
-  # it "Did the child go to bed?" do
-  #   expect().to eq
-  # end
-
-
-  # it "How much did the baby sitter get paid?" do
-  #   expect().to eq
-  # end
+  it "Baby sitter calculate hourly wage 17:00:00 to 03:30:00" do
+    response = shift("2021-08-21 17:00:00 -0400", "2021-08-21 21:00:00 -0400", "2021-08-22 03:30:00 -0400")
+    expect(response[:pay]).to eq(128)
+  end
 end
