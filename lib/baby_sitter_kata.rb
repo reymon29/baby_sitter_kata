@@ -27,7 +27,7 @@ def shift(start_shift, in_bed_time, end_shift)
   elsif end_time.hour > 4
     time_and_pay[:error] = "Please check your end time #{end_time.hour} cannot stay after 4."
   else
-   time_and_pay[:pay] = calculate_hourly_rate(start_time, bed_time, end_time)
+    time_and_pay[:pay] = calculate_hourly_rate(start_time, bed_time, end_time)
   end
   return time_and_pay
 end
@@ -43,7 +43,7 @@ def calculate_hourly_rate(start_shift, in_bed_time, end_shift)
     total_amount += (((midnight - bed_time) / 3600) * 8)
     total_amount += (((end_shift - midnight) / 3600) * 16)
   else
-   total_amount += (((end_shift - bed_time) / 3600) * 8)
+    total_amount += (((end_shift - bed_time) / 3600) * 8)
   end
   total_amount = total_amount.round(0)
   return total_amount
